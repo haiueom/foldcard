@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
+
+:root {
+	--font-family: "Poppins", sans-serif;
+	--font-size-base: 12px;
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+	--font-weight-bold: 700;
+	--line-height-base: 1.618;
+	--card-width: 300px;
+	--card-height: 400px;
+	--background-color: #fbe9fb;
+	--card-bg-color: white;
+	--highlight-color: #e212e2;
+	--dark-color: #333333;
+	--transition-speed: 1s;
+	--shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--font-family);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-light);
+	line-height: var(--line-height-base);
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: var(--background-color);
+}
+
+#card {
+	position: relative;
+	width: var(--card-width);
+	height: var(--card-height);
+	background: var(--card-bg-color);
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
+	box-shadow: var(--shadow);
+	transition: var(--transition-speed);
+}
+
+#card:hover {
+	transform: translateX(50%);
+}
+
+#imgBox {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transform-origin: left;
+	transform-style: preserve-3d;
+	background: black;
+	transition: var(--transition-speed);
+	box-shadow: var(--shadow);
+}
+
+#card:hover #imgBox {
+	transform: rotateY(-180deg);
+}
+
+#imgBox img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+}
+
+#imgBox img:nth-child(2) {
+	transform: rotateY(180deg);
+}
+
+#details {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("../assets/imperatrix-umbrosa.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.75;
+}
+
+#content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+#title {
+	font-size: 2.618rem;
+	font-weight: var(--font-weight-bold);
+}
+
+#sub-title {
+	color: var(--highlight-color);
+	font-size: 1.618rem;
+	font-weight: 600;
+}
+
+#social-icons {
+	display: flex;
+	gap: 10px;
+	margin-top: 2em;
+}
+
+#social-icons a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 35px;
+	height: 35px;
+	background: var(--dark-color);
+	color: white;
+	text-decoration: none;
+	font-size: 1.618rem;
+	transition: transform 0.2s, background-color 0.2s;
+	border-radius: 50%;
+}
+
+#social-icons a:hover {
+	transform: scale(1.2);
+	background: var(--highlight-color);
+}
