@@ -7,14 +7,16 @@
 	--font-weight-regular: 400;
 	--font-weight-bold: 700;
 	--line-height-base: 1.618;
-	--card-width: 300px;
-	--card-height: 400px;
-	--background-color: #fbe9fb;
-	--card-bg-color: white;
-	--highlight-color: #e212e2;
-	--dark-color: #333333;
+	--card-width: 400px;
+	--card-height: 500px;
+	--background-color: #f4eeff;
+	--card-bg-color: #ffffff;
+	--highlight-color: #7c5d9a;
+	--dark-color: #4a4054;
+	--icon-bg-color: #4a4054;
+	--icon-color: #ffffff;
+	--shadow-color: rgba(74, 64, 84, 0.25);
 	--transition-speed: 1s;
-	--shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -42,7 +44,7 @@ body {
 	background: var(--card-bg-color);
 	transform-style: preserve-3d;
 	transform: perspective(1000px);
-	box-shadow: var(--shadow);
+	box-shadow: 10px 20px 40px var(--shadow-color);
 	transition: var(--transition-speed);
 }
 
@@ -118,7 +120,7 @@ body {
 
 #social-icons {
 	display: flex;
-	gap: 10px;
+	gap: 12px;
 	margin-top: 2em;
 }
 
@@ -128,15 +130,15 @@ body {
 	align-items: center;
 	width: 35px;
 	height: 35px;
-	background: var(--dark-color);
-	color: white;
+	background: var(--icon-bg-color);
+	color: var(--icon-color);
 	text-decoration: none;
 	font-size: 1.618rem;
-	transition: transform 0.2s, background-color 0.2s;
+	transition: transform 0.3s ease, background-color 0.3s ease;
 	border-radius: 50%;
 }
 
 #social-icons a:hover {
-	transform: scale(1.2);
+	transform: translateY(-5px) scale(1.1);
 	background: var(--highlight-color);
 }
